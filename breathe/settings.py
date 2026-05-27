@@ -2,6 +2,7 @@ import os
 from pathlib import Path
 
 import dj_database_url
+from django.core.exceptions import ImproperlyConfigured
 
 
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -60,6 +61,11 @@ if DATABASE_URL and "://" in DATABASE_URL:
     DATABASES = {
         "default": dj_database_url.parse(DATABASE_URL, conn_max_age=600)
     }
+elif not DEBUG:
+    raise ImproperlyConfigured(
+        "DATABASE_URL is required when DEBUG=False. In Railway, add it to the app service as "
+        "${{breathe-esg-db.DATABASE_URL}} or use Railway's Add Reference Variable picker."
+    )
 else:
     DATABASES = {
         "default": dj_database_url.parse(

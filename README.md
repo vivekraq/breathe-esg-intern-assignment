@@ -54,6 +54,8 @@ If your Railway PostgreSQL service is named `breathe-esg-db`, use:
 DATABASE_URL=${{breathe-esg-db.DATABASE_URL}}
 ```
 
+Add this variable on the Django/app service, not on the PostgreSQL service. If the PostgreSQL database page says "You have no tables", the app probably deployed without this reference variable and migrations did not run against Postgres.
+
 Railway will use `railway.json` to build the React app, collect static files, run migrations, seed demo data, and start Gunicorn.
 
 After deployment, generate a public domain in the service Networking tab. The same URL opens the dashboard and serves the API.
