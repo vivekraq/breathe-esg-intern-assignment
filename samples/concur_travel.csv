@@ -1,0 +1,4 @@
+Report ID,Expense ID,Expense Type,Start Date,End Date,Origin,Destination,Distance,Distance Unit,Nights,Amount,Currency
+EXP-9912,AIR-1,Flight,2026-02-03,2026-02-03,SFO,JFK,,,,812.40,USD
+EXP-9912,HTL-1,Hotel,2026-02-03,2026-02-06,,,,,3,690,USD
+EXP-9918,GROUND-7,Ground transport,2026-02-08,,LHR,Office,,,,55,GBP
