@@ -48,6 +48,12 @@ DEBUG=False
 ALLOWED_HOSTS=*
 ```
 
+If your Railway PostgreSQL service is named `breathe-esg-db`, use:
+
+```text
+DATABASE_URL=${{breathe-esg-db.DATABASE_URL}}
+```
+
 Railway will use `railway.json` to build the React app, collect static files, run migrations, seed demo data, and start Gunicorn.
 
 After deployment, generate a public domain in the service Networking tab. The same URL opens the dashboard and serves the API.
